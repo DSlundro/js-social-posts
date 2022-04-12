@@ -16,7 +16,7 @@ const objects = [
         "id": '1',
         "autore": {
                 "nome": 'Monkey D. Luffy',
-                "foto": './assets/img/luffy_avatar.webp',
+                "foto": './asets/img/luffy_avatar.webp',
                 },
         "data": '04-12-2022',
         "testo": `Monkey D. Rufy è il protagonista del manga One Piece, scritto e disegnato da Eiichirō Oda, e delle sue opere derivate. Nell'edizione italiana della serie televisiva anime è soprannominato Rubber fino all'episodio 578, mentre a partire dall'episodio 579 e nei film usciti al cinema anche in Italia viene mantenuta la sua traslitterazione ufficiale Monkey D. Luffy`,
@@ -63,18 +63,19 @@ const objects = [
 // Milestone 2
 // Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i post del nostro feed.
 
-
-const arrayLike = [];
+// creo una costante per selezionare l'elemento della DOM
 const elementi = document.getElementById('container');
 
+// creo una funzione per stampare le card in DOM
 function generaPost(elementiPost){
+    // seleziono tutti gli elementi dell'oggetto
     const { id, autore, testo, img, likes, data} = elementiPost;
     return `
     <div class="post">
         <div class="post__header">
             <div class="post-meta">
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${autore.foto}" alt="${autore.nome}">
+                    <img class="profile-pic" src="${autore.foto}" alt="${autore.nome}" onerror="NAME">
                 </div>
                 <div class="post-meta__data">
                     <div class="post-meta__author">${autore.nome}</div>
@@ -101,36 +102,33 @@ function generaPost(elementiPost){
         </div>
     </div>
     `;
-}
-
+    }
 objects.forEach((element) => {
     elementi.innerHTML += generaPost(element);
 });
 
+// creo le variabili per il bottone e il contatore like
+let bottoneLike = document.querySelectorAll(`.js-like-button`);
+let contatoreLIke = document.querySelectorAll(`.js-likes-counter`);
 
-
-const bottoneLike = document.querySelectorAll(`.js-like-button`);
-const contatoreLIke = document.querySelectorAll(`.js-likes-counter`);
-
-
+// creo un ciclo incrementare il numero di mi piace
 for (let i = 0 ; i < bottoneLike.length ; i++){
-
+    // creo una costante per il valoe ciclato
     const element = bottoneLike[i];
-
+    // creo un evento che parte con il click del mouse
     element.addEventListener('click', (event) => {
+        // annullo il reindirizzamento della pagina al click del pulsante mi piace
         event.preventDefault();
-
+        // creo uan condizione per aggiungere o rimuovere il numero dei like
         if ( element.classList.contains('like-button--liked') ){
             element.classList.remove('like-button--liked');
             contatoreLIke[i].innerHTML = parseInt(contatoreLIke[i].innerHTML) - 1;
-            arrayLike.splice( arrayLike.indexOf(bottoneLike[i].getAttribute('data-postid') ));
-
-        } else {
+        } 
+        else {
             element.classList.add('like-button--liked');
             contatoreLIke[i].innerHTML = parseInt(contatoreLIke[i].innerHTML) + 1;
-            arrayLike.push(bottoneLike[i].getAttribute('data-postid'));
         }
-        console.log(arrayLike)
     })
-}
+};
+
 

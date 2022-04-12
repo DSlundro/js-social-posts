@@ -59,16 +59,21 @@ h1 {
 }
 
 .post-meta__author {
-    font-weight: bold;
+    font-weight: 900;
+    font-size: 22px;
 }
 
 .post-meta__time {
-    font-size: 0.8rem;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 5px;
+    font-style: oblique;
 }
 
 .profile-pic {
     border-radius: 50%;
     max-width: 60px;
+    box-shadow: 0 0 10px 3px gray;
 }
 
 .profile-pic-default {
