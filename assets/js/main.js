@@ -109,7 +109,6 @@ objects.forEach((element) => {
 
 
 
-
 const bottoneLike = document.querySelectorAll(`.js-like-button`);
 const contatoreLIke = document.querySelectorAll(`.js-likes-counter`);
 
