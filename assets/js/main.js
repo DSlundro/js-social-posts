@@ -75,11 +75,11 @@ function generaPost(elementiPost){
         <div class="post__header">
             <div class="post-meta">
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${autore.foto}" alt="${autore.nome}" onerror="NAME">
+                    <img class="profile-pic" src="${autore.foto}" alt="${autore.nome}">
                 </div>
                 <div class="post-meta__data">
                     <div class="post-meta__author">${autore.nome}</div>
-                    <div class="post-meta__time">${data}</div>
+                    <div class="post-meta__time">${convertDate(data)}</div>
                 </div>
             </div>
         </div>
@@ -107,6 +107,13 @@ objects.forEach((element) => {
     elementi.innerHTML += generaPost(element);
 });
 
+// converto la data in gg/mm/aaaa
+function convertDate(str) {
+    let d = str.split("-");
+    let dat = (d[1] + '/' + d[0] + '/' + d[2]);
+    return dat;   
+}
+
 // creo le variabili per il bottone e il contatore like
 let bottoneLike = document.querySelectorAll(`.js-like-button`);
 let contatoreLIke = document.querySelectorAll(`.js-likes-counter`);
@@ -130,5 +137,6 @@ for (let i = 0 ; i < bottoneLike.length ; i++){
         }
     })
 };
+
 
 
