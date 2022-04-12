@@ -15,7 +15,9 @@ const objects = [
     {
         "id": '1',
         "autore": {
-                "nome": 'Monkey D. Luffy',
+                "nome": 'Luffy',
+                "nick": 'D.',
+                "cognome": 'Monkey',
                 "foto": './assets/img/luffy_avatar.webp',
                 },
         "data": '04-12-2022',
@@ -26,7 +28,9 @@ const objects = [
     {
         "id": '2',
         "autore": {
-                "nome": 'Roronoa Zoro',
+                "nome": 'Zoro',
+                "nick":'',
+                "cognome": 'Roronoa',
                 "foto": './assets/img/zoro_avatar.png',
                 },
         "data": '05-17-2021',
@@ -39,6 +43,8 @@ const objects = [
         "id": '3',
         "autore": {
                 "nome": 'Nami',
+                "nick":'',
+                "cognome": '',
                 "foto": './assets/img/nami_avatar.jpg',
                 },
         "data": '11-08-2021',
@@ -49,7 +55,9 @@ const objects = [
     {
         "id": '4',
         "autore": {
-                "nome": 'Portuguese D. Ace',
+                "nome": 'Ace',
+                "nick": 'D.',
+                "cognome": 'Portuguese',
                 "foto": './assets/img/ace_avatar.jpg',
                 },
         "data": '12-31-2021',
@@ -75,10 +83,10 @@ function generaPost(elementiPost){
         <div class="post__header">
             <div class="post-meta">
                 <div class="post-meta__icon">
-                    <img class="profile-pic" src="${autore.foto}" alt="${autore.nome}">
+                    <img class="profile-pic" src="${autore.foto}" alt="${autore.cognome[0]}${autore.nome[0]}">
                 </div>
                 <div class="post-meta__data">
-                    <div class="post-meta__author">${autore.nome}</div>
+                    <div class="post-meta__author">${autore.cognome} ${autore.nick} ${autore.nome}</div>
                     <div class="post-meta__time">${convertDate(data)}</div>
                 </div>
             </div>
