@@ -107,3 +107,31 @@ objects.forEach((element) => {
     elementi.innerHTML += generaPost(element);
 });
 
+
+
+
+const bottoneLike = document.querySelectorAll(`.js-like-button`);
+const contatoreLIke = document.querySelectorAll(`.js-likes-counter`);
+
+
+for (let i = 0 ; i < bottoneLike.length ; i++){
+
+    const element = bottoneLike[i];
+
+    element.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        if ( element.classList.contains('like-button--liked') ){
+            element.classList.remove('like-button--liked');
+            contatoreLIke[i].innerHTML = parseInt(contatoreLIke[i].innerHTML) - 1;
+            arrayLike.splice( arrayLike.indexOf(bottoneLike[i].getAttribute('data-postid') ));
+
+        } else {
+            element.classList.add('like-button--liked');
+            contatoreLIke[i].innerHTML = parseInt(contatoreLIke[i].innerHTML) + 1;
+            arrayLike.push(bottoneLike[i].getAttribute('data-postid'));
+        }
+        console.log(arrayLike)
+    })
+}
+

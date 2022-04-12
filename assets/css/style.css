@@ -36,6 +36,7 @@ h1 {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px white;
+    padding: 5%;
 }
 
 .post__header {
@@ -87,18 +88,15 @@ h1 {
     text-transform: uppercase;
 }
 
-.post__text {
-    margin-bottom: 16px;
-}
+.post__text {margin: 20px 0 30px 0; text-align: justify;}
 
 .post__image {
     margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
 }
 
-.post__image img {
-    width: 100%;
-    border-radius: 8px;
-}
+.post__image img {width: 100%;border-radius: 8px;}
 
 .likes {
     display: flex;
@@ -112,17 +110,10 @@ h1 {
     border-radius: 8px;    
     text-decoration: none;
     color: #404040;
+    cursor: pointer;
 }
 
-.like-button:not(.like-button--liked):hover {
-    background-color: #e3e3e3
-}
-
-.like-button__label {
-    font-weight: bold;
-}
-
-.like-button--liked {
-    color: #0CD977;
-    cursor: default;
-}
+.like-button:not(.like-button--liked):hover {background-color: #e3e3e3;}
+.like-button__label{font-weight: bold;}
+.like-button--liked{color: red;}
+.like-button--liked:hover{background-color: #e3e3e3;}
