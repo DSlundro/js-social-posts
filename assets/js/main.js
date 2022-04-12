@@ -108,10 +108,10 @@ objects.forEach((element) => {
 });
 
 // converto la data in gg/mm/aaaa
-function convertDate(str) {
-    let d = str.split("-");
-    let dat = (d[1] + '/' + d[0] + '/' + d[2]);
-    return dat;   
+function convertDate(stringa) {
+    let singleDate = stringa.split("-");
+    let date = (singleDate[1] + '/' + singleDate[0] + '/' + singleDate[2]);
+    return date;   
 }
 
 // creo le variabili per il bottone e il contatore like
