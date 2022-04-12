@@ -16,7 +16,7 @@ const objects = [
         "id": '1',
         "autore": {
                 "nome": 'Monkey D. Luffy',
-                "foto": './asets/img/luffy_avatar.webp',
+                "foto": './assets/img/luffy_avatar.webp',
                 },
         "data": '04-12-2022',
         "testo": `Monkey D. Rufy è il protagonista del manga One Piece, scritto e disegnato da Eiichirō Oda, e delle sue opere derivate. Nell'edizione italiana della serie televisiva anime è soprannominato Rubber fino all'episodio 578, mentre a partire dall'episodio 579 e nei film usciti al cinema anche in Italia viene mantenuta la sua traslitterazione ufficiale Monkey D. Luffy`,
